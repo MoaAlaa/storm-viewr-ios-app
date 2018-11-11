@@ -15,6 +15,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Storm Viewer By Alaa"
+        
         let fm      = FileManager.default
         
         let path    = Bundle.main.resourcePath!
@@ -27,7 +29,8 @@ class ViewController: UITableViewController {
             }
         }
         
-        print(images)
+        navigationController?.navigationBar.prefersLargeTitles = true
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
