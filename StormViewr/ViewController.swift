@@ -30,6 +30,20 @@ class ViewController: UITableViewController {
         print(images)
     }
 
-
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+//        cell.textLabel?.text = pictures[indexPath.row]
+//        return cell
+//    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Images", for: indexPath)
+        cell.textLabel?.text = images[indexPath.row]
+        return cell
+    }
 }
 
