@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,6 +47,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9z-e3-C37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471.1999999999998" y="-207.34632683658174"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="P78-WE-er5">
+            <objects>
+                <viewController storyboardIdentifier="Details" id="W5f-5F-Qqt" customClass="DetailViewController" customModule="StormViewr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pl0-lH-XH6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AWv-tZ-Yrj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AWv-tZ-Yrj" secondAttribute="trailing" id="5Hl-ei-Kpe"/>
+                            <constraint firstItem="AWv-tZ-Yrj" firstAttribute="bottom" secondItem="nXj-hv-1gi" secondAttribute="bottom" id="GgV-sM-cQ4"/>
+                            <constraint firstItem="AWv-tZ-Yrj" firstAttribute="leading" secondItem="Pl0-lH-XH6" secondAttribute="leading" id="t4T-VF-oea"/>
+                            <constraint firstItem="AWv-tZ-Yrj" firstAttribute="top" secondItem="Pl0-lH-XH6" secondAttribute="top" id="wgE-9s-yVP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nXj-hv-1gi"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="AWv-tZ-Yrj" id="kSQ-hg-mv5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Utr-tD-z6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3245.5999999999999" y="-207.34632683658174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xC6-PC-Flm">

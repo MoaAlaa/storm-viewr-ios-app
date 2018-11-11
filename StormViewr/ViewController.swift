@@ -45,5 +45,17 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = images[indexPath.row]
         return cell
     }
-}
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1: try loading the "Details" view controller and typecasting it to be DetailViewController
+        // .instantiateViewController(withIdentifier: "Details") WIll Retuen UIViewController But We Need DetailViewController
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Details") as? DetailViewController {
+            // 2: success! Set its selectedImage property
+            vc.selectedImage = images[indexPath.row]
+            
+            // 3: now push it onto the navigation controller
+            navigationController?.pushViewController(vc, animated: true)
+        }
+
+    }
+}
