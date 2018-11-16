@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         title = "View Image By Alaa"
+        // Get The Right Button Bar For Sharing
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareBtn))
         
         if let imageToLoad = selectedImage {
             title = "View Image: \(imageToLoad) By Alaa"
@@ -36,6 +38,13 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
         
+    }
+    
+    @objc func shareBtn() {
+        let activityViewController = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: [])
+        // for ipad because i pad show it like popover
+        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(activityViewController, animated: true)
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
